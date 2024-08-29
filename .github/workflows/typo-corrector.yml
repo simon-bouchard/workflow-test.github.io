@@ -1,2 +1,13 @@
 name: Typo-corrector
-description: Corrects typos and errors in .md files
+
+run-name: Typo Corrector
+on: push
+
+jobs:
+  proselint:
+    name: Proselint
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: action/checkout@v4
+      - name: Proselint
+        uses: dhruvmanila/action-proselint@master
